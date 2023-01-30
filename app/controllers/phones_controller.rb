@@ -4,13 +4,11 @@
 class PhonesController < ApplicationController
   before_action :set_contact
 
-  # DELETE /contacts/1/phones
   def destroy
     phone = Phone.find(phone_params[:id])
     phone.destroy
   end
 
-  # POST /contacts/1/phone/1
   def create
     @contact.phones << Phones.new(phone_params)
 
@@ -21,7 +19,6 @@ class PhonesController < ApplicationController
     end
   end
 
-  # PATCH /contacts/1/phones
   def update
     phone = Phone.find(phone_params[:id])
 
@@ -32,7 +29,6 @@ class PhonesController < ApplicationController
     end
   end
 
-  # GET /contacts/1/phones/1
   def show
     render json: @contact.phones
   end

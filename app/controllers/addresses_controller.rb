@@ -4,12 +4,10 @@
 class AddressesController < ApplicationController
   before_action :set_contact
 
-  # DELETE /contacts/1/address
   def destroy
     @contact.address.destroy
   end
 
-  # POST /contacts/1/address
   def create
     @contact.address = Address.new(address_params)
 
@@ -20,7 +18,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # PATCH /contacts/1/address
   def update
     if @contact.address.update(address_params)
       render json: @contact.address
@@ -29,7 +26,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # GET /contacts/1/address
   def show
     render json: @contact.address
   end
